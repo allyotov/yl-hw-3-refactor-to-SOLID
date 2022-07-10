@@ -1,12 +1,25 @@
-class Kostroma:
-    city_name = 'Kostroma'
+#DIP (Dependency Inversion)
+from abc import ABC, abstractmethod
 
-    def get_orcs(self):
+
+class Place(ABC):
+    name = 'Place'
+    @abstractmethod
+    def get_villian(self):
+        print('In {} ...'.format(self.name))
+
+
+class Kostroma(Place):
+    name = 'Kostroma'
+
+    def get_villian(self):
+        super().get_villian()
         print('Orcs hid in the forest')
+        
 
-
-class Tokyo:
+class Tokyo(Place):
     name = 'Tokyo'
 
-    def get_godzilla(self):
+    def get_villian(self):
+        super().get_villian()
         print('Godzilla stands near a skyscraper')
