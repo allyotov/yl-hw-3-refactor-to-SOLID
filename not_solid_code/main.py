@@ -1,6 +1,7 @@
 from typing import Union
 from heroes import Superman, SuperHero
 from places import Kostroma, Tokyo
+from mass_media import create_news
 
 
 def save_the_place(hero: SuperHero, place: Union[Kostroma, Tokyo]):
@@ -8,7 +9,7 @@ def save_the_place(hero: SuperHero, place: Union[Kostroma, Tokyo]):
     hero.attack()
     if hero.can_use_ultimate_attack:
         hero.ultimate()
-    hero.create_news(place)
+    create_news(hero, place)
 
 
 if __name__ == '__main__':
